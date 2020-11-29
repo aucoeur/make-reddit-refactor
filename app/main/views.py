@@ -1,8 +1,9 @@
 from flask import Blueprint, render_template
+from flask_login import login_required
 
 main = Blueprint('main', __name__)
 
 @main.route('/')
+@main.route('/index')
 def index():
-    username = '' #'hunter2'
-    return render_template('index.html', username=username)
+    return render_template('index.html')
