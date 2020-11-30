@@ -16,7 +16,7 @@
         <div class="text-white mr-3">
           {% if not current_user.is_anonymous %}
           Hello, <strong>{{ current_user.username }}</strong>!
-          <a href="" class="btn btn-secondary">New Page</a>
+          <a href="{{ url_for('entry.create_new')}}" class="btn btn-secondary">New Entry</a>
           <a href="{{ url_for('account.logout') }}" class="btn btn-secondary ml-2">Log Out</a>
           {% else %}
           Howdy!         

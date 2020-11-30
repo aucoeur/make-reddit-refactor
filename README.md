@@ -2,11 +2,12 @@
 - [x] Refactor to use a SQLAlchemy database instead of Mongo  
 - [x] Add models for:  
     - [x] User  
-    - [x] Post (?)  
-- [-] Add login functionality using Flask-Login  
-  - [-] Password hashing
-- [ ] Add feature to post a new entry with Flask-WTForms  
-- [ ] Add message flashing when a new post is posted  
+    - [x] Entry (?)  
+- [x] Add login functionality using Flask-Login  
+  - [x] Password hashing
+- [x] Add feature to post a new entry with Flask-WTForms  
+- [x] Add message flashing when a new post is posted  
+- [ ] Add entry to db
 
 ## **Instructions**
 

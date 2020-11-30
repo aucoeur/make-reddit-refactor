@@ -2,3 +2,4 @@ env/
 .vscode
 __pycache__
 .env
+app/templates/detail.html

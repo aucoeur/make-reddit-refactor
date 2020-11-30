@@ -4,4 +4,5 @@ module (as opposed to just their python files)
 """
 
 from .user import *
-from .post import *
+from .entry import *
+from .votes import *
