@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1>New Entry</h1>
-    <form action="{{ url_for('entry.create_new')}}" method="post">
+    <form action="{{ url_for('entry.create_new') }}" method="post">
         {{ form.csrf_token }}
         <div>
         {% for field in form if field.id != 'csrf_token' and field.id != 'submit' %}
@@ -10,7 +10,7 @@
             <p>{{ field }}</p>
         </div>
         {% endfor %}
-        <div>    
+        <div>
             {{ form.submit() }}
         </div>
     </form>

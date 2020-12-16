@@ -2,12 +2,17 @@
 - [x] Refactor to use a SQLAlchemy database instead of Mongo  
 - [x] Add models for:  
     - [x] User  
-    - [x] Entry (?)  
+    - [x] Entry  
 - [x] Add login functionality using Flask-Login  
   - [x] Password hashing
 - [x] Add feature to post a new entry with Flask-WTForms  
 - [x] Add message flashing when a new post is posted  
-- [ ] Add entry to db
+- [x] Add entry to db
+- [x] Populate entries on index
+- [x] 'Read more' links to individual entry
+- [ ] Bootstrap the jinja templates
+- [ ] Implement up/down votes
+- [ ] Update/Delete entries(?)
 
 ## **Instructions**
 

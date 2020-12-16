@@ -7,9 +7,9 @@ class Entry(db.Model):
     content = db.Column(db.Text)
     url = db.Column(db.Text)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    author_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     # upvotes = db.relationship('')
     # downvotes = db.relationship('')
 
     def __repr__(self):
-        return '<Entry {}>'.format(self.title)
+        return f'<Entry {self.title}>'
