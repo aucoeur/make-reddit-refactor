@@ -6,6 +6,6 @@ from wtforms.validators import DataRequired, ValidationError, URL
 
 class EntryForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()])
-    content = TextAreaField('Content', validators=[DataRequired()])
+    description = TextAreaField('Description', validators=[DataRequired()])
     url = URLField('Link', validators=[DataRequired(), URL()])
     submit = SubmitField('Create New Entry')

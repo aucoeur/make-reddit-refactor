@@ -1,5 +1,6 @@
 from flask import Blueprint, flash, redirect, render_template, url_for
 from flask_login import current_user, login_user, logout_user
+from flask_login.utils import login_required
 
 from app.database import db
 from app.models import User
@@ -30,6 +31,7 @@ def login():
     return render_template('login.html', title='Sign In', form=form)
 
 @account.route('/logout')
+@login_required
 def logout():
     '''
     Log out user

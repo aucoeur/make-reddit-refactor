@@ -1,4 +1,4 @@
-from flask import Blueprint, flash, redirect, render_template, request, url_for
+from flask import Blueprint, flash, redirect, render_template, url_for
 from flask_login import current_user, login_required
 
 from app.database import db
@@ -21,7 +21,7 @@ def create_new():
     if form.validate_on_submit():
         entry = Entry(
             title = form.title.data,
-            content = form.content.data,
+            description = form.description.data,
             url = form.url.data,
             author_id = current_user.id
         )

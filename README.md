@@ -11,7 +11,8 @@
 - [x] Populate entries on index
 - [x] 'Read more' links to individual entry
 - [x] Bootstrap the jinja forms
-- [ ] Implement up/down votes
+- [x] Add error handlers to redirect to index & flash error
+- [ ] Implement up/down doots
 - [ ] Update/Delete entries(?)
 
 ## **Instructions**

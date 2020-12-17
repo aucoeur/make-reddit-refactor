@@ -1,5 +1,8 @@
+from flask.templating import render_template
+# from werkzeug.utils import redirect
 from app.models import entry
-from flask import Flask
+from flask import Flask, flash, redirect, url_for
+from werkzeug.exceptions import HTTPException
 from flask_login import LoginManager
 from config import Config
 from .database import db, migrate
@@ -9,7 +12,7 @@ from .account.views import account
 from .entry.views import entry
 
 login = LoginManager()
-login.login_view = 'login'
+login.login_view = 'account.login'
 
 def create_app():
     app = Flask(__name__)
@@ -33,6 +36,18 @@ def create_app():
     @login.user_loader
     def load_user(id):
         return User.query.get(int(id))
+
+    @app.errorhandler(HTTPException)
+    def handle_http_exception(err):
+        '''
+        Flash errors and redirect to index
+        '''
+
+        response = err.get_response()
+        flash(response.status)
+
+        return redirect(url_for('main.index'))
+
 
     app.register_blueprint(main)
     app.register_blueprint(account)
