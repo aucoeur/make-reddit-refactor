@@ -17,11 +17,12 @@ def create_app():
 
     db.init_app(app)
 
-    migrate.init_app(app, db)
+    # Alembic includes support for migrating a table in this way with a feature called "batch mode" - render_as_batch=True
+    migrate.init_app(app, db, render_as_batch=True)
     login.init_app(app)
 
     from app.models import Entry, User
-    
+
     @app.shell_context_processor
     def make_shell_context():
         '''
